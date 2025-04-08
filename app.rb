@@ -26,9 +26,8 @@ request["x-rapidapi-host"] = 'fortune-cookie4.p.rapidapi.com'
 
 response = http.request(request)
 reader =  response.read_body
-# jsontest = JSON.parse(reader)
-hashtest = {"welcome" => :tester}
-puts reader.class
-puts hashtest.class
-puts hashtest["welcome"]
-puts reader
+jsontest = JSON.parse(reader)
+
+data = jsontest.fetch("data")
+message = data.fetch("message")
+puts message
