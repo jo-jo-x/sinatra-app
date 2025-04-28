@@ -9,42 +9,37 @@
         margin: 0px;
         position: relative;
         background-color: rgba(227, 48, 48, 1.0);
+        color: rgba(255, 255, 255, 1.0);
         }
-      body::after {
-        content: '';
-        display: block;
-        height: 40px;
-        /* Set same as footer's height */
-      }
-      footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 40px;
-      }
       .header {
         text-align: left;
         font-size: 28px; 
-        color: rgba(255, 54, 54, 1.0);
-        background-color: rgba(255, 243, 148, 1.0);
-        padding: 4px 8px
+        padding: 8px;
       }
       .attrib {
         text-align: right;
-        font-size: 14px; 
+        font-size: 14px;
+        padding: 8px;
+      }
+      .tablestyle {
+        color: rgba(255, 54, 54, 1.0);
+        background-color: rgba(255, 243, 148, 1.0);
+        display: flex;
+        justify-content: space-between;
       }
     </style>
   </head>
 
   <body>
-    <div class="header">
-      FORTUNE TELLER <a class="attrib" href="https://www.vecteezy.com/free-png/fortune-cookie">Fortune Cookie PNGs by Vecteezy</a>
+    <div class="tablestyle">
+      <div class="header">
+        FORTUNE TELLER
+      </div>
+      <div class="attrib">
+        <a href="https://www.vecteezy.com/free-png/fortune-cookie">Fortune Cookie PNGs by Vecteezy</a>
+      </div>
     </div>
+
     <%= yield %>
   </body>
-<!--  <footer>
-   <div class="footer">
-     <a href="https://www.vecteezy.com/free-png/fortune-cookie">Fortune Cookie PNGs by Vecteezy</a>
-   </div>
-  </footer>-->
 </html>

@@ -11,6 +11,12 @@ require 'dotenv/load'
 
 get("/") do
 
+  erb(:homepage)
+
+end
+
+get("/result") do
+
   fkey = ENV.fetch("FORTUNE_KEY")
 
   url = URI("https://fortune-cookie4.p.rapidapi.com/")
@@ -29,6 +35,6 @@ get("/") do
   data = jsontest.fetch("data")
   @message = data.fetch("message")
 
-  erb(:homepage)
+  erb(:result)
 
 end
